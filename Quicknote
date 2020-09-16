@@ -1,0 +1,32 @@
+## Some quicknote for my own reference 
+
+### Read multiple csv into one fulle dataframe
+
+import os
+import pandas as pd
+
+path = os.getcwd()
+files = os.listdir(path)
+
+
+csv_files = [f for f in files if f[-3:] == 'csv']
+
+
+#### To count if still loading data
+
+i = 0
+for f in csv_files:
+    i += 1
+    print(i)
+    data = pd.read_csv(f)
+    full_df = full_df.append(data)
+
+
+
+
+### To covert a dateime into PeriodIndex (e.g. monthly)
+full_df['Month_Year'] = pd.to_datetime(full_df['starttime']).dt.to_period('M')
+
+
+### Count number of elements in a list
+len(x)
