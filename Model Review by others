@@ -1,0 +1,15 @@
+
+
+Interpretation on coefficients: First of all, AR(p) and MA(q) terms are bounded between (−1,1) or else the process is not stationary. 
+Second, you judge whether a coefficient is statistically significant based on the relevant t−test. 
+For example your third exogenous variable, while large on absolute terms, also has large standard error and cannot be considered statistically significant at the 1% confidence level (i.e. there is a chance >1% that this coefficient is actually 0). 
+Third, if your exogenous variables are of different scale it is reasonable to have large discrepancies in absolute terms in the coefficients.
+So the answer is that I cannot judge which coefficient is more important at this stage; this would probably require applying a method such forward or backward selection in order to assess the impact of each predictor separately.
+
+ARIMAX vs multiple linear regression: Good enough is relevant. 
+There are several ways of evaluating a model's performance. 
+Some of them are based on in-sample diagnostics: R2, residual diagnostics and Akaike information criterion among others. 
+In fact I believe that auto.arima() uses AIC as a default for model selection. 
+If forecasting is your goal, you should probably evaluate based on the forecast accuracy on a hold-out set. 
+I would suggest checking the residual diagnostics to get a first assessment of the quality of your model. 
+If your residuals are i.i.d. it would indicate a good fit.
