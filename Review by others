@@ -1,5 +1,3 @@
-
-
 Interpretation on coefficients: First of all, AR(p) and MA(q) terms are bounded between (−1,1) or else the process is not stationary. 
 Second, you judge whether a coefficient is statistically significant based on the relevant t−test. 
 For example your third exogenous variable, while large on absolute terms, also has large standard error and cannot be considered statistically significant at the 1% confidence level (i.e. there is a chance >1% that this coefficient is actually 0). 
